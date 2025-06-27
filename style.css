@@ -154,6 +154,17 @@ button.prev, button.next {
 button.prev {
     left: 10px;
 }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Evita rolagem lateral em mobile */
+}
+
 #whatsapp-button {
   position: fixed;
   bottom: 20px;
@@ -171,6 +182,7 @@ button.prev {
   align-items: center;
   gap: 10px;
   transition: background 0.3s;
+  z-index: 9999;
 }
 
 #whatsapp-button:hover {
