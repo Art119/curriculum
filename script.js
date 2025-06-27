@@ -12,9 +12,10 @@ document.getElementById('formContato').addEventListener('submit', function(event
         document.getElementById('msgSucesso').innerText = "Por favor, preencha todos os campos.";
     }
 });
- document.getElementById("whatsapp-button").addEventListener("click", function () {
-      const numero = "5574999198226"; // Substitua pelo seu número com DDI e DDD
+ document.getElementById("whatsapp-button").onclick = function () {
+      const numero = "5574999198226"; // <-- Altere para seu número com DDI e DDD
       const mensagem = "Olá! Gostaria de conversar com você.";
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-      window.open(url, "_blank");
-    });
+      
+      window.location.href = url;
+    };
