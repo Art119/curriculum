@@ -154,6 +154,34 @@ button.prev, button.next {
 button.prev {
     left: 10px;
 }
+#whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s;
+}
+
+#whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+#whatsapp-button img {
+  width: 24px;
+  height: 24px;
+}
+
 
 button.next {
     right:
