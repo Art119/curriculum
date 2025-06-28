@@ -197,3 +197,48 @@ body {
 
 button.next {
     right:
+.carrossel-videos-container {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.carrossel-videos-slide {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carrossel-videos-slide video {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.prev-video,
+.next-video {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev-video {
+  left: 10px;
+}
+
+.next-video {
+  right: 10px;
+}
+
+.prev-video:hover,
+.next-video:hover {
+  background-color: rgba(0,0,0,0.8);
+}
