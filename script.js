@@ -36,22 +36,20 @@ function moveCarrossel(direction) {
     items[currentIndex].style.display = 'block';
 }
 
-let videoIndex = 0;
+let slideIndex = 0;
 
-function moverVideo(direction) {
-  const slideContainer = document.querySelector('.carrossel-videos-slide');
-  const videos = document.querySelectorAll('.carrossel-videos-slide video');
-  
-  // Pausar todos os vídeos ao mudar
-  videos.forEach(video => video.pause());
-  
-  videoIndex += direction;
+function trocarSlide(direcao) {
+  const trilho = document.querySelector(".galeria-trilho");
+  const slides = document.querySelectorAll(".slide");
+  const totalSlides = slides.length;
 
-  if (videoIndex < 0) {
-    videoIndex = videos.length - 1;
-  } else if (videoIndex >= videos.length) {
-    videoIndex = 0;
+  slideIndex += direcao;
+
+  if (slideIndex < 0) {
+    slideIndex = totalSlides - 1;
+  } else if (slideIndex >= totalSlides) {
+    slideIndex = 0;
   }
 
-  slideContainer.style.transform = `translateX(-${videoIndex * 100}%)`;
+  trilho.style.transform = `translateX(-${slideIndex * 100}%)`;
 }
