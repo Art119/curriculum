@@ -44,3 +44,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+let videoIndex = 0;
+
+function moverVideo(direction) {
+  const slideContainer = document.querySelector('.carrossel-videos-slide');
+  const videos = document.querySelectorAll('.carrossel-videos-slide video');
+  
+  // Pausar todos os vídeos antes de mudar
+  videos.forEach(video => video.pause());
+  
+  videoIndex += direction;
+
+  if (videoIndex < 0) {
+    videoIndex = videos.length - 1;
+  } else if (videoIndex >= videos.length) {
+    videoIndex = 0;
+  }
+
+  slideContainer.style.transform = `translateX(-${videoIndex * 100}%)`;
+}
+
+
