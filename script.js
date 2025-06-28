@@ -36,21 +36,13 @@ function moveCarrossel(direction) {
     items[currentIndex].style.display = 'block';
 }
 
-// Inicializa exibindo somente o primeiro item
-document.addEventListener('DOMContentLoaded', () => {
-    const items = document.querySelectorAll('.carrossel-item');
-    items.forEach((item, index) => {
-        item.style.display = index === 0 ? 'block' : 'none';
-    });
-});
-
 let videoIndex = 0;
 
 function moverVideo(direction) {
   const slideContainer = document.querySelector('.carrossel-videos-slide');
   const videos = document.querySelectorAll('.carrossel-videos-slide video');
   
-  // Pausar todos os vídeos antes de mudar
+  // Pausar todos os vídeos ao mudar
   videos.forEach(video => video.pause());
   
   videoIndex += direction;
@@ -63,5 +55,3 @@ function moverVideo(direction) {
 
   slideContainer.style.transform = `translateX(-${videoIndex * 100}%)`;
 }
-
-
