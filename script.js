@@ -19,3 +19,28 @@ document.getElementById('formContato').addEventListener('submit', function(event
       
       window.location.href = url;
     };
+
+let currentIndex = 0;
+
+function moveCarrossel(direction) {
+    const items = document.querySelectorAll('.carrossel-item');
+    items[currentIndex].style.display = 'none';
+
+    currentIndex += direction;
+    if (currentIndex < 0) {
+        currentIndex = items.length - 1;
+    } else if (currentIndex >= items.length) {
+        currentIndex = 0;
+    }
+
+    items[currentIndex].style.display = 'block';
+}
+
+// Inicializa exibindo somente o primeiro item
+document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.carrossel-item');
+    items.forEach((item, index) => {
+        item.style.display = index === 0 ? 'block' : 'none';
+    });
+});
+
